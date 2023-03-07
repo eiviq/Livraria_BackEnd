@@ -2,7 +2,7 @@ import { cone } from "../database";
 import {z} from 'zod';
 import { FastifyInstance } from "fastify";
 
-export async function transactionsRouteGeneros(app : FastifyInstance){
+export async function transactionsRouteLivros(app : FastifyInstance){
 
     app.post('/livros/criar' , async (request ,reply) =>{
         
