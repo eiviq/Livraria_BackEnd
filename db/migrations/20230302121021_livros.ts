@@ -7,14 +7,18 @@ export async function up(knex: Knex): Promise<void> {
 
         table.increments('id').primary();
         table.text('titulo').notNullable();
-        table.integer('autor_id').notNullable();
-        table.integer('genero_id').notNullable();
         table.integer('ano').notNullable();
         table.integer('ISBN').notNullable();
         table.text('descricao').notNullable();
         table.text('imagem').notNullable();
         table.float('preco').notNullable();
         table.float('avaliacao').notNullable();
+        table.integer('autor_id').unsigned();
+        table.foreign('autor_id').references('autor.id');
+        table.integer('generos_id').unsigned();
+        table.foreign('generos_id').references('generos.id');
+        table.integer('editoras_id').unsigned();
+        table.foreign('editoras_id').references('editoras.id');
       
     })
 }

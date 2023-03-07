@@ -11,7 +11,7 @@ export async function up(knex: Knex): Promise<void> {
         table.text('sobrenome').notNullable();
         table.text('formação').notNullable();
         table.text('nacionalidade').notNullable();
-
+        
     })
 }
 
